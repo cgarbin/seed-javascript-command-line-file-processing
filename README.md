@@ -7,7 +7,7 @@ Covers:
 - Process more than one file with file globbing
 - Working with pipes (redirect stdin and stdout)
 - Accepting command line options with file names
-- -Mutually exclusive command line options with a default option
+- Mutually exclusive command line options with a default option
 
 Sources for this code and command-line programs in general:
 
