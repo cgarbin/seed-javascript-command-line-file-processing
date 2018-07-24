@@ -65,8 +65,13 @@ if (!program.tolower && !program.toupper) {
   program.tolower = true;
 }
 
-// Just to make cose a bit shorter and more readable
-const lower = program.tolower;
+let operation = program.tolower
+  ? function(line) {
+      return line.toLowerCase();
+    }
+  : function(line) {
+      return line.toUpperCase();
+    };
 
 files.forEach(file => {
   if (program.verbose) {
@@ -84,6 +89,6 @@ files.forEach(file => {
     console.error(error.message);
   });
   rl.on("line", line => {
-    console.log(lower ? line.toLowerCase() : line.toUpperCase());
+    console.log(operation(line));
   });
 });
