@@ -79,6 +79,7 @@ files.forEach(file => {
   });
   rl.input.on("error", error => {
     // Print human-readable message
+    // Note that try/catch doesn't work for this case
     // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
     console.error(error.message);
   });
