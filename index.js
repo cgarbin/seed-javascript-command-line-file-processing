@@ -49,10 +49,9 @@ program
   })
   .parse(process.argv);
 
-// Show help if no option given (also exits the program)
+// Read from stdin if no argument given
 if (program.args.length === 0) {
-  // TODO: change to read from stdin in this case
-  program.help();
+  files = ["-"];
 }
 
 // Parameter validation: both options specified
@@ -75,6 +74,7 @@ files.forEach(file => {
   }
 
   const rl = readline.createInterface({
+    // TODO: handle file not found
     input: file === "-" ? process.stdin : fs.createReadStream(file),
     crlfDelay: Infinity
   });
