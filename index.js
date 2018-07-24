@@ -34,7 +34,7 @@ const program = require("commander");
 const readline = require("readline");
 const fs = require("fs");
 
-let files = [];
+let files = ["-"]; // Read from stdin if no argument given
 
 program
   .version("0.1.0")
@@ -48,11 +48,6 @@ program
     files = f;
   })
   .parse(process.argv);
-
-// Read from stdin if no argument given
-if (program.args.length === 0) {
-  files = ["-"];
-}
 
 // Parameter validation: both options specified
 if (program.tolower && program.toupper) {
