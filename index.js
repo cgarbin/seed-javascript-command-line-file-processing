@@ -78,6 +78,11 @@ files.forEach(file => {
     input: file === "-" ? process.stdin : fs.createReadStream(file),
     crlfDelay: Infinity
   });
+  rl.input.on("error", error => {
+    // Print human-readable message
+    // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+    console.error(error.message);
+  });
   rl.on("line", line => {
     console.log(lower ? line.toLowerCase() : line.toUpperCase());
   });
