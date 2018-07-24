@@ -79,7 +79,6 @@ files.forEach(file => {
   }
 
   const rl = readline.createInterface({
-    // TODO: handle file not found
     input: file === "-" ? process.stdin : fs.createReadStream(file),
     crlfDelay: Infinity
   });
