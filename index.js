@@ -65,7 +65,7 @@ if (!program.tolower && !program.toupper) {
   program.tolower = true;
 }
 
-let operation = program.tolower
+const operation = program.tolower
   ? function(line) {
       return line.toLowerCase();
     }
