@@ -29,6 +29,7 @@
  * Some extended chars to test UTF-8 handling against this source code:
  *     á Á ñ Ñ - çãü
  */
+"use strict";
 
 const program = require("commander");
 const readline = require("readline");
