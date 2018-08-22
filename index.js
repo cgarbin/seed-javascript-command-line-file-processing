@@ -41,7 +41,6 @@ program
   .version("0.1.0")
   .description("Converts files to all upper or all lower case.")
   .arguments("[files...]")
-  // Option with two values and default
   .option("-l, --tolower", "Convert to lower case (default)")
   .option("-u, --toupper", "Convert to upper case")
   .option("-v, --verbose", "Verbose mode")
