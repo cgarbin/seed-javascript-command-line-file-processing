@@ -36,7 +36,6 @@ of [package.json](package.json) for the name used to invoke the script once inst
 - Clone git repository
 - `cd` to the repository directory
 - Install all dependencies: `npm install`
-- Run unit tests with `npm test`
 - Install as a shell command with `npm install -g`
 - During development, link to the working version with `npm link`
 
