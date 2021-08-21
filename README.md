@@ -42,7 +42,6 @@ seed-file-processing cat file.txt | thisscript.py # read from stdin
 
 It's also meant to be installed as with node (`npm install -g`).
 
-
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
