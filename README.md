@@ -1,4 +1,4 @@
-# JavaScript command line parsing
+# JavaScript file parsing
 
 A seed program for processing files in JavaScript.
 
