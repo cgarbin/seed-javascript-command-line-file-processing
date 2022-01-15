@@ -37,40 +37,43 @@ const fs = require("fs");
 
 let files = ["-"]; // Read from stdin if no argument given
 
-program
-  .version("0.1.0")
-  .description("Converts files to all upper or all lower case.")
-  .arguments("[files...]")
+program.version("0.1.0")
+  .description("Converts files to all upper or all lower case.");
+
+program.arguments("[files...]")
   .option("-l, --tolower", "Convert to lower case (default)")
   .option("-u, --toupper", "Convert to upper case")
-  .option("-v, --verbose", "Verbose mode")
-  .action(function(f) {
-    files = f;
-  })
-  .parse(process.argv);
+  .option("-v, --verbose", "Verbose mode");
+
+program.action(function (f) {
+  files = f;
+});
+
+program.parse();
+const options = program.opts();
 
 // Parameter validation: both options specified
-if (program.tolower && program.toupper) {
+if (options.tolower && options.toupper) {
   console.warn("Ignoring --toupper, using --tolower");
-  program.toupper = false;
+  options.toupper = false;
 }
 
 // Parameter validation: no option specified (use default)
-if (!program.tolower && !program.toupper) {
-  program.tolower = true;
+if (!options.tolower && !options.toupper) {
+  options.tolower = true;
 }
 
-const operation = program.tolower
-  ? function(line) {
-      return line.toLowerCase();
-    }
-  : function(line) {
-      return line.toUpperCase();
-    };
+const operation = options.tolower
+  ? function (line) {
+    return line.toLowerCase();
+  }
+  : function (line) {
+    return line.toUpperCase();
+  };
 
 files.forEach(file => {
-  if (program.verbose) {
-    console.warn("Processing file " + file);
+  if (options.verbose) {
+    console.warn(`Processing file ${file}`);
   }
 
   const rl = readline.createInterface({
